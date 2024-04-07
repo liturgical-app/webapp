@@ -1,2 +1,2 @@
 # webapp
-Gets the liturgical colour for a date ✨🎨
+Find the liturgical colour for a date ✨🎨
