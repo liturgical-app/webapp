@@ -1,4 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component } from '@angular/core';
+import { CalendarService } from "../../core/service/calendar.service";
+import {LiturgicalDate} from "../../core/model/liturgical-date";
 
 @Component({
   selector: 'calendar',
@@ -7,11 +9,13 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 })
 export class CalendarComponent {
 
-  protected date: Date = new Date();
+  protected date: LiturgicalDate = new LiturgicalDate();
+
+  constructor(private service: CalendarService) {}
 
   /** Select a date for liturgical information */
-  selectDate(event: any) {
-    this.date = event.value;
+  async selectDate(event: any) {
+    this.date = await this.service.getInformation(event.value);
   }
 
 }
