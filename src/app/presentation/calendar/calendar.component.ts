@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'calendar',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./calendar.component.sass']
 })
 export class CalendarComponent {
+
+  protected date: Date = new Date();
+
+  /** Select a date for liturgical information */
+  selectDate(event: any) {
+    this.date = event.value;
+  }
 
 }
