@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CalendarService } from "../../core/service/calendar.service";
-import {LiturgicalDate} from "../../core/model/liturgical-date";
+import { LiturgicalDate } from "../../core/model/liturgical-date";
 
 @Component({
   selector: 'calendar',
