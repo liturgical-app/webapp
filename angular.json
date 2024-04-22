@@ -76,6 +76,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "local": {
+              "buildTarget": "webapp:build:local"
+            },
             "production": {
               "buildTarget": "webapp:build:production"
             },

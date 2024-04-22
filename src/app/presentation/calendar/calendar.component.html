@@ -1,18 +1,31 @@
-<mat-form-field>
-  <mat-label>Choose a date</mat-label>
-  <input
-    matInput
-    [matDatepicker]="picker"
-    (dateInput)="selectDate($event)"
-    (dateChange)="selectDate($event)">
-  <mat-hint>MM/DD/YYYY</mat-hint>
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+<section [style.background-color]="!!date ? date.colourcode : '#fff'">
+  <mat-form-field class="input">
+    <mat-label>Choose a date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      (dateInput)="selectDate($event)"
+      (dateChange)="selectDate($event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 
-<br>
-<br>
+  <br>
+  <br>
 
-{{ date.colourcode }}
+  @if (!!date) {
+    <div class="info">
+      <p>{{ date.date }}</p>
+      <p>{{ date.name }}</p>
+      <p>{{ date.week }}</p>
+      <p>{{ date.weekno }}</p>
+      <p>{{ date.season }}</p>
+      <p>{{ date.season_url }}</p>
+      <p>{{ date.colourcode }}</p>
+    </div>
+  }
+</section>
+
 
 

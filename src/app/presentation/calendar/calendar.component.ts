@@ -9,7 +9,7 @@ import { LiturgicalDate } from "../../core/model/liturgical-date";
 })
 export class CalendarComponent {
 
-  protected date: LiturgicalDate = new LiturgicalDate();
+  protected date: null | LiturgicalDate = null;
 
   constructor(private service: CalendarService) {}
 
